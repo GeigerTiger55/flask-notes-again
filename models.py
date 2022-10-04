@@ -32,13 +32,17 @@ class Note(db.Model):
     )
 
     # TODO: Notes title field
+    title = db.Column(
+        db.text,
+        nullable=False,
+    )
 
-    entry_date = db.Column(
+    created = db.Column(
         db.DateTime,
         nullable = False,
         default=db.func.now(),
     )
-    note_text = db.Column(
+    content = db.Column(
         db.text,
         nullable=False,
     )
