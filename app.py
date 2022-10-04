@@ -29,6 +29,16 @@ def get_all_notes():
     serialized = [n.serialize() for n in notes]
     return jsonify(notes=serialized)
 
+@app.get('/api/notes/<int:n_id>')
+def get_single_note(n_id):
+    """Return JSON with info about single note
+        - {'note': {id, title, created, content}}
+    """
+    
+    note = Note.query.get_or_404(n_id)
+    serialized = note.serialize()
+    return jsonify(note=serialized)
+    
 # Thinking space
 # ----
 # Use sqLite - done
