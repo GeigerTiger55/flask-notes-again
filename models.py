@@ -1,4 +1,4 @@
-"""Models for ... app."""
+"""Models for Notes app."""
 
 from flask_sqlalchemy import SQLAlchemy
 
@@ -12,7 +12,6 @@ def connect_db(app):
 
 ############################# Classes ##########################################
 
-######## The One in "One-Many"
 class Note(db.Model):
     """
     Creates a note instance.
@@ -39,3 +38,13 @@ class Note(db.Model):
         db.Text,
         nullable=False,
     )
+    
+    def serialize(self):
+        """Serialize to dictionary"""
+        
+        return{
+            "id": self.id,
+            "title": self.title,
+            "created": self.created,
+            "content": self.content, 
+        }
