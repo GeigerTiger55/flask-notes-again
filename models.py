@@ -22,7 +22,7 @@ class Note(db.Model):
     __tablename__ = "notes"
 #     Requires a database be created in psql. Check terminal psql commands.
 
-# Always check that Column is uppercase. Common bug. 
+# Always check that Column is uppercase. Common bug.
 # Primary key auto sets nullable = False, & unique=True
     id = db.Column(
         db.Integer,
@@ -30,6 +30,9 @@ class Note(db.Model):
         primary_key=True,
         autoincrement=True,
     )
+
+    # TODO: Notes title field
+
     entry_date = db.Column(
         db.DateTime,
         nullable = False,

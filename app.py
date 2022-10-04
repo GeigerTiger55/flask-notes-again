@@ -24,3 +24,16 @@ def root():
     """Redirect user to ... page"""
 
     return redirect('/...')
+
+# Thinking space
+# ----
+# Use sqLite
+# Create a table /w sqLite
+# ----
+# Routes
+# Restful
+# Get 1 note
+# Get all notes
+# Get note(s) by filter
+# ----
+# API Insomnia Post & Delete a note
